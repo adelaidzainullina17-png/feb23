@@ -1,7 +1,4 @@
-// ПОЛНЫЙ КОД СКРИПТА - копируйте целиком!
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем элементы
     const questionContainer = document.getElementById('question-container');
     const giftContainer = document.getElementById('gift-container');
     const questionText = document.getElementById('question-text');
@@ -9,45 +6,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnYes = document.getElementById('btn-yes');
     const btnNo = document.getElementById('btn-no');
 
-    // Шаг игры (1, 2 или 3)
     let currentStep = 1;
 
-    // Функция для обновления вопроса и картинки
     function updateQuestion(step) {
         if (step === 1) {
             questionText.innerText = 'Ты служил?';
-            questionImage.src = 'images/question1?123';
+            questionImage.src = 'images/question1.jpg';  // ВАШЕ ИМЯ
         } else if (step === 2) {
             questionText.innerText = 'Может, на военную кафедру ходил?';
-            questionImage.src = 'images/question2?123';
+            questionImage.src = 'images/question2.jpg';  // ВАШЕ ИМЯ
         } else if (step === 3) {
             questionText.innerText = 'Может, повестку получал?';
-            questionImage.src = 'images/question3?123';
+            questionImage.src = 'images/question3.jpg';  // ВАШЕ ИМЯ
         }
     }
 
-    // ===== НОВАЯ ФУНКЦИЯ ПОКАЗА ОТКРЫТКИ С ГАЛЕРЕЕЙ =====
     function showGift() {
-        // Прячем вопросы
         questionContainer.classList.add('hidden');
-        // Показываем подарок
         giftContainer.classList.remove('hidden');
         
-        // Вставляем открытку с галереей
         giftContainer.innerHTML = `
             <div class="gift-card">
                 <h2>🎉 С ПРАЗДНИКОМ, РОДНОЙ! 🎉</h2>
                 
-                <!-- Галерея картинок -->
                 <div class="gallery">
                     <button class="gallery-btn prev" onclick="changeImage(-1)">❮</button>
-                    <img id="gallery-img" class="gallery-img" src="images/gallery1?123" alt="поздравление">
+                    <img id="gallery-img" class="gallery-img" src="images/gallery1.jpg" alt="поздравление">
                     <button class="gallery-btn next" onclick="changeImage(1)">❯</button>
                 </div>
                 
                 <p>Листай дальше! 🎁</p>
                 
-                <!-- Песня (без индикатора) -->
                 <audio autoplay loop style="display: none;">
                     <source src="audio/army-song.mp3" type="audio/mpeg">
                 </audio>
@@ -55,12 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // Кнопка ДА
     btnYes.addEventListener('click', function() {
         showGift();
     });
 
-    // Кнопка НЕТ
     btnNo.addEventListener('click', function() {
         if (currentStep === 1) {
             currentStep = 2;
@@ -73,27 +60,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Запускаем первый вопрос
     updateQuestion(1);
 });
 
-// ===== ГАЛЕРЕЯ (работает отдельно) =====
-// Массив с картинками для галереи
+// Галерея
 const galleryImages = [
-    'images/gallery1?123',
-    'images/gallery2?123', 
-    'images/gallery3?123',
-    'images/gallery4?123',
-    'images/gallery5?123'  // добавьте сколько нужно
+    'images/gallery1.jpg',
+    'images/gallery2.jpg', 
+    'images/gallery3.jpg',
+    'images/gallery4.jpg',
+    'images/gallery5.jpg'
 ];
 
 let currentImageIndex = 0;
 
-// Функция для переключения картинок
 window.changeImage = function(direction) {
     currentImageIndex = currentImageIndex + direction;
     
-    // Зацикливаем галерею (чтобы после последней шла первая)
     if (currentImageIndex < 0) {
         currentImageIndex = galleryImages.length - 1;
     }
@@ -101,6 +84,5 @@ window.changeImage = function(direction) {
         currentImageIndex = 0;
     }
     
-    // Меняем картинку
     document.getElementById('gallery-img').src = galleryImages[currentImageIndex];
 };
