@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С 23 февраля!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- КОНТЕЙНЕР С ВОПРОСАМИ -->
+        <div id="question-container" class="question-container">
+            <!-- Здесь будет картинка -->
+            <img id="question-image" class="question-image" src="" alt="картинка вопроса">
+            <!-- Здесь будет текст вопроса -->
+            <h2 id="question-text"></h2>
+            <!-- Кнопки -->
+            <div class="buttons">
+                <button id="btn-yes" class="btn btn-green">ДА</button>
+                <button id="btn-no" class="btn btn-red">НЕТ</button>
+            </div>
+        </div>
+
+        <!-- КОНТЕЙНЕР С ПОДАРКОМ (изначально скрыт) -->
+        <div id="gift-container" class="gift-container hidden">
+            <!-- Сюда вставится открытка -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
