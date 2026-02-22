@@ -7,26 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ЭТО ГЛАВНЫЙ КОНТЕЙНЕР -->
     <div class="container">
-        <!-- КОНТЕЙНЕР С ВОПРОСАМИ -->
+        
+        <!-- ЭТО КОНТЕЙНЕР С ВОПРОСАМИ (ПОКАЗЫВАЕТСЯ СНАЧАЛА) -->
         <div id="question-container" class="question-container">
-            <!-- Здесь будет картинка -->
-            <img id="question-image" class="question-image" src="" alt="картинка вопроса">
-            <!-- Здесь будет текст вопроса -->
+            
+            <!-- ЗДЕСЬ БУДЕТ КАРТИНКА ВОПРОСА -->
+            <img id="question-image" class="question-image" src="" alt="вопрос">
+            
+            <!-- ЗДЕСЬ БУДЕТ ТЕКСТ ВОПРОСА -->
             <h2 id="question-text"></h2>
-            <!-- Кнопки -->
+            
+            <!-- КНОПКИ ДА/НЕТ -->
             <div class="buttons">
                 <button id="btn-yes" class="btn btn-green">ДА</button>
                 <button id="btn-no" class="btn btn-red">НЕТ</button>
             </div>
         </div>
-
-        <!-- КОНТЕЙНЕР С ПОДАРКОМ (изначально скрыт) -->
+        
+        <!-- ЭТО КОНТЕЙНЕР С ПОДАРКОМ (СКРЫТ СНАЧАЛА) -->
         <div id="gift-container" class="gift-container hidden">
-            <!-- Сюда вставится открытка -->
+            <!-- СЮДА ВСТАВИТСЯ ОТКРЫТКА С ГАЛЕРЕЕЙ -->
         </div>
+        
     </div>
 
+    <!-- ПОДКЛЮЧАЕМ СКРИПТ -->
     <script src="script.js"></script>
 </body>
 </html>
